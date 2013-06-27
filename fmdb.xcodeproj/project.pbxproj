@@ -17,12 +17,12 @@
 		CC9E4EBA13B31188005F9210 /* FMDatabasePool.h in Headers */ = {isa = PBXBuildFile; fileRef = CC9E4EB713B31188005F9210 /* FMDatabasePool.h */; };
 		CC9E4EBB13B31188005F9210 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9E4EB813B31188005F9210 /* FMDatabasePool.m */; };
 		CCBE26C113B3BA8C006F6C37 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCBE26C013B3BA8C006F6C37 /* AppKit.framework */; };
-		CCBEBDAC0DF5DE1A003DDD08 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CCBEBDAB0DF5DE1A003DDD08 /* libsqlite3.dylib */; };
 		CCC24EC10A13E34D00A6D3E3 /* FMDatabase.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CCC24EBA0A13E34D00A6D3E3 /* FMDatabase.h */; };
 		CCC24EC20A13E34D00A6D3E3 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC24EBB0A13E34D00A6D3E3 /* FMDatabase.m */; };
 		CCC24EC50A13E34D00A6D3E3 /* fmdb.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC24EBE0A13E34D00A6D3E3 /* fmdb.m */; };
 		CCC24EC60A13E34D00A6D3E3 /* FMResultSet.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CCC24EBF0A13E34D00A6D3E3 /* FMResultSet.h */; };
 		CCC24EC70A13E34D00A6D3E3 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC24EC00A13E34D00A6D3E3 /* FMResultSet.m */; };
+		D33A991C177C923E00934AC7 /* libSQLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D33A991B177C923E00934AC7 /* libSQLite.a */; };
 		EE42910512B42FBC0088BD94 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CC50F2CB0DF9183600E4AAAE /* FMDatabaseAdditions.m */; };
 		EE42910612B42FC30088BD94 /* FMDatabaseAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CC50F2CC0DF9183600E4AAAE /* FMDatabaseAdditions.h */; };
 		EE42910712B42FC90088BD94 /* FMDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = CCC24EBA0A13E34D00A6D3E3 /* FMDatabase.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -69,6 +69,7 @@
 		CCC24EBE0A13E34D00A6D3E3 /* fmdb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = fmdb.m; path = src/fmdb.m; sourceTree = "<group>"; };
 		CCC24EBF0A13E34D00A6D3E3 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = src/FMResultSet.h; sourceTree = "<group>"; };
 		CCC24EC00A13E34D00A6D3E3 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = src/FMResultSet.m; sourceTree = "<group>"; };
+		D33A991B177C923E00934AC7 /* libSQLite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSQLite.a; path = "../../../../Library/Developer/Xcode/DerivedData/TaskUI-cbihblguadhqlkaqnbqxbcrxmarg/Build/Products/Debug/libSQLite.a"; sourceTree = "<group>"; };
 		EE4290EF12B42F870088BD94 /* libFMDB.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFMDB.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE42910C12B42FFA0088BD94 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		EE42910E12B430070088BD94 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -79,8 +80,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D33A991C177C923E00934AC7 /* libSQLite.a in Frameworks */,
 				8DD76F9C0486AA7600D96B5E /* Foundation.framework in Frameworks */,
-				CCBEBDAC0DF5DE1A003DDD08 /* libsqlite3.dylib in Frameworks */,
 				CCBE26C113B3BA8C006F6C37 /* AppKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,6 +101,7 @@
 		08FB7794FE84155DC02AAC07 /* fmdb */ = {
 			isa = PBXGroup;
 			children = (
+				D33A991B177C923E00934AC7 /* libSQLite.a */,
 				CC8C138B0E3135C400FBE1E7 /* LICENSE.txt */,
 				CC8C138A0E3135C400FBE1E7 /* CHANGES_AND_TODO_LIST.txt */,
 				CC8C138C0E3135C400FBE1E7 /* CONTRIBUTORS.txt */,
@@ -284,7 +286,10 @@
 				GCC_PREFIX_HEADER = fmdb_Prefix.pch;
 				GCC_WARN_SHADOW = YES;
 				INSTALL_PATH = "$(HOME)/bin";
-				LIBRARY_SEARCH_PATHS = "$(LIBRARY_SEARCH_PATHS)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(LIBRARY_SEARCH_PATHS)",
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/TaskUI-cbihblguadhqlkaqnbqxbcrxmarg/Build/Products/Debug\"",
+				);
 				PRODUCT_NAME = fmdb;
 			};
 			name = Debug;
@@ -303,7 +308,10 @@
 				GCC_PREFIX_HEADER = fmdb_Prefix.pch;
 				GCC_WARN_SHADOW = YES;
 				INSTALL_PATH = "$(HOME)/bin";
-				LIBRARY_SEARCH_PATHS = "$(LIBRARY_SEARCH_PATHS)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(LIBRARY_SEARCH_PATHS)",
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/TaskUI-cbihblguadhqlkaqnbqxbcrxmarg/Build/Products/Debug\"",
+				);
 				PRODUCT_NAME = fmdb;
 			};
 			name = Release;
